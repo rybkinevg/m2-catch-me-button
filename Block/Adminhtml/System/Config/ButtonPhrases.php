@@ -2,7 +2,7 @@
 /**
  * CyberHULL_CatchMeButton
  *
- * @copyright Copyright (c) 2021 Alpine Consulting, Inc (www.alpineinc.com)
+ * @copyright Copyright (c) 2021 CyberHULL (https://www.cyberhull.com)
  * @author    Evgeniy Rybkin <evgeniy.rybkin@cyberhull.com>
  */
 
