@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CyberHULL_CatchMeButton
+ *
+ * @copyright Copyright (c) 2021 CyberHULL (https://www.cyberhull.com)
+ * @author    Evgeniy Rybkin <evgeniy.rybkin@cyberhull.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Checkout Config Provider -->
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="cyberhull_catch_me_button_config_provider"
+                      xsi:type="object">CyberHULL\CatchMeButton\Model\Checkout\ConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

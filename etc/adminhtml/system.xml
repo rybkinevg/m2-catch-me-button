@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CyberHULL_CatchMeButton
+ *
+ * @copyright Copyright (c) 2021 CyberHULL (https://www.cyberhull.com)
+ * @author    Evgeniy Rybkin <evgeniy.rybkin@cyberhull.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- CyberHULL tab -->
+        <tab id="cyberhull" translate="label" sortOrder="10">
+            <label>CyberHULL</label>
+        </tab>
+        <!-- Catch Me Button section -->
+        <section id="ch_catch_me_button"
+                 translate="label"
+                 sortOrder="30"
+                 showInDefault="1"
+                 showInWebsite="1"
+                 showInStore="1">
+            <class>separator-top</class>
+            <label>Catch Me Button</label>
+            <tab>cyberhull</tab>
+            <resource>CyberHULL_CatchMeButton::config</resource>
+            <!-- General group -->
+            <group id="general"
+                   translate="label"
+                   type="text"
+                   sortOrder="1"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>General</label>
+                <!-- Enable module field -->
+                <field id="enable"
+                       translate="label"
+                       type="select"
+                       sortOrder="1"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                       canRestore="1">
+                    <label>Enable module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <!-- Button Phrases field -->
+                <field id="button_phrases"
+                       translate="label comment"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                       canRestore="1">
+                    <label>Button Phrases</label>
+                    <comment>These phrases will be shown to customer, when he will try to click on the button</comment>
+                    <frontend_model>CyberHULL\CatchMeButton\Block\Adminhtml\System\Config\ButtonPhrases</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+            <!-- Checkout group -->
+            <group id="checkout"
+                   translate="label"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Checkout Page</label>
+                <!-- Clicked Action field -->
+                <field id="clicked_action"
+                       type="select"
+                       translate="label comment"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1"
+                       canRestore="1">
+                    <label>Clicked Action</label>
+                    <comment>This action will be executed if customer will click on the button</comment>
+                    <source_model>CyberHULL\CatchMeButton\Model\Adminhtml\System\Config\Source\Actions</source_model>
+                </field>
+                <!-- Custom Redirect field -->
+                <field id="custom_redirect"
+                       type="text"
+                       translate="label comment"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Custom Redirect</label>
+                    <comment>Enter custom url where customer will be redirected</comment>
+                    <validate>validate-url</validate>
+                    <depends>
+                        <field id="clicked_action">customRedirect</field>
+                    </depends>
+                </field>
+                <!-- Redirect field -->
+                <field id="redirect"
+                       type="select"
+                       translate="label comment"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Redirect</label>
+                    <comment>Select CMS page where customer will be redirected</comment>
+                    <source_model>CyberHULL\CatchMeButton\Model\Adminhtml\System\Config\Source\Pages</source_model>
+                    <depends>
+                        <field id="clicked_action">redirect</field>
+                    </depends>
+                </field>
+                <!-- Exception field -->
+                <field id="exception"
+                       type="text"
+                       translate="label comment"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Exception</label>
+                    <comment>Enter you custom exception message</comment>
+                    <depends>
+                        <field id="clicked_action">exception</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

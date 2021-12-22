@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * CyberHULL_CatchMeButton
+ *
+ * @copyright Copyright (c) 2021 CyberHULL (https://www.cyberhull.com)
+ * @author    Evgeniy Rybkin <evgeniy.rybkin@cyberhull.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <ch_catch_me_button>
+            <general>
+                <enable>1</enable>
+                <button_phrases>
+                    <phrase_1>
+                        <phrase>Come on</phrase>
+                    </phrase_1>
+                    <phrase_2>
+                        <phrase>You can do this</phrase>
+                    </phrase_2>
+                    <phrase_3>
+                        <phrase>Catch me</phrase>
+                    </phrase_3>
+                    <phrase_4>
+                        <phrase>It was close</phrase>
+                    </phrase_4>
+                    <phrase_5>
+                        <phrase>You almost did it</phrase>
+                    </phrase_5>
+                    <phrase_6>
+                        <phrase>Bazinga</phrase>
+                    </phrase_6>
+                    <phrase_7>
+                        <phrase>You are doing well</phrase>
+                    </phrase_7>
+                </button_phrases>
+            </general>
+            <checkout>
+                <clicked_action>placeOrder</clicked_action>
+                <custom_redirect>https://upload.wikimedia.org/wikipedia/ru/thumb/7/78/Trollface.svg/640px-Trollface.svg.png</custom_redirect>
+                <redirect>no-route</redirect>
+                <exception>That is not fair!!!</exception>
+            </checkout>
+        </ch_catch_me_button>
+    </default>
+</config>
